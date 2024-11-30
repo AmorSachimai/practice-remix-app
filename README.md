@@ -1,40 +1,28 @@
-# Welcome to Remix!
+# Remix の勉強を兼ねた web App
 
-- 📖 [Remix docs](https://remix.run/docs)
+## 使用技術
 
-## Development
+- Nodejs(バージョンは[.node-version](.node-version)を参照)
+- フレームワーク: Remix
+- 他: テキトーに
 
-Run the dev server:
+## 開発環境
 
-```shellscript
-npm run dev
+パッケージのインストール yarn で行っている。
+
+```bash
+yarn
 ```
 
-## Deployment
+### lint & formatt
 
-First, build your app for production:
+[Biomejs](https://biomejs.dev/ja/) を使っている。
+ルールは基本的に推奨設定を利用している。詳しくは[設定ファイル](biome.json)を参照。
 
-```sh
-npm run build
+```bash
+# format
+yarn format
+
+# lint
+yarn lint
 ```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
