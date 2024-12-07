@@ -5,9 +5,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteError,
 } from "@remix-run/react";
-
 import "./tailwind.css";
+import { useEffect } from "react";
+import { getErrorStatus } from "./utils/errors";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,4 +44,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return <Outlet />;
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const status = getErrorStatus(error);
+
+  useEffect(() => {
+    window.location.replace(`/error/${status}/`);
+  });
+  return null;
 }
